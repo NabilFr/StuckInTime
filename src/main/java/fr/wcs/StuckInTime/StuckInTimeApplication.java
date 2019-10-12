@@ -8,13 +8,6 @@ public class StuckInTimeApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StuckInTimeApplication.class, args);
-
-/*		String[] weapons = {"épée"};
-		String[] frontal = {"foncer dans le tas"};
-
-		int[] choix = {0, 0};*/
-
-
 	}
 
 }

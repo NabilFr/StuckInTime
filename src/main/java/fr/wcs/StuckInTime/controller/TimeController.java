@@ -14,8 +14,8 @@ public class TimeController {
     private Hero personnage1 = new Hero("","","");
     static String name = "";
 
-    @PostMapping("/poneymagique")
-    public String indexContinue(Model model, @RequestParam(name = "continue") int choice) {
+    @PostMapping("/weapon")
+    public String indexContinue(Model model, @RequestParam(name = "weapon") int choice) {
 
            personnage1.setName(heroes[choice]);
            name = personnage1.getName();

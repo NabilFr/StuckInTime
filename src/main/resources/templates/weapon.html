@@ -6,6 +6,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 <body>
+<p th:text="|${name} start!|"></p>
 <form th:action="@{/attack}" method="post">
     <input type="hidden" name="weapon" placeholder="Epée" value="0"/>
     <input type="submit" value="Epée">

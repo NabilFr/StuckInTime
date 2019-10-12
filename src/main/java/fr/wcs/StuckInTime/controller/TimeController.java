@@ -50,9 +50,17 @@ public class TimeController {
         model.addAttribute("name", name);
         model.addAttribute("attack", attackChoice[attack]);
         personnage1.setAttack(attackChoice[attack]);
-        if (personnage1.getAttack().equals("frontale") && personnage1.getArme().equals("fourchette")) {
+        if (name.equals("Joker") && personnage1.getAttack().equals("frontale")
+                && personnage1.getArme().equals("fourchette")) {
             return "/win";
-        }else {
+        }else if (name.equals("Pika") && personnage1.getAttack().equals("dans l'oeil")
+                && personnage1.getArme().equals("épée")){
+            return "/win";
+        }else if (name.equals("The Mask") && personnage1.getAttack().equals("insulte")
+                && personnage1.getArme().equals("Bouclier")){
+            return "/win";
+        }
+        else {
             return "/lose";
         }
     }

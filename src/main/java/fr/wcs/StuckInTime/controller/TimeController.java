@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TimeController {
-    String[] heroes = {"JCVD", "Bob l'éponge", "Notre projet !!!!", };
+    String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke", };
     private Hero personnage1 = new Hero("","","");
     static String name = "";
 
@@ -56,7 +56,7 @@ public class TimeController {
         }else if (name.equals("Pika") && personnage1.getAttack().equals("dans l'oeil")
                 && personnage1.getArme().equals("épée")){
             return "/win";
-        }else if (name.equals("The Mask") && personnage1.getAttack().equals("insulte")
+        }else if (name.equals("MacroJoke") && personnage1.getAttack().equals("insulte")
                 && personnage1.getArme().equals("Bouclier")){
             return "/win";
         }

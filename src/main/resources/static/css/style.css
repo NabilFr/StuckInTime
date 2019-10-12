@@ -38,13 +38,16 @@ h4{
 
     display: flex;
     flex-flow: row wrap;
-    line-height: 5em;
+
     justify-content: space-between;
     width: 800px;
     padding-top: 25px;
     padding-bottom: 50px;
 }
 
+input {
+    margin: 12px 0;
+}
 
 #hero{
     background-image: url('../images/heros/jcvd.jpg');
@@ -72,7 +75,7 @@ h4{
 }
 #hero5{
     background-image: url('../images/heros/nicky.jpg');
-    background-size: contain;continu
+    background-size: contain;
     width: 250px;
     height: 250px;
 }

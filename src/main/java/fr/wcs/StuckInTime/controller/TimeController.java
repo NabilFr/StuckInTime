@@ -28,7 +28,7 @@ public class TimeController {
     @PostMapping("/attack")
     public String weaponChoice(Model model, @RequestParam(name = "weapon") int weapon) {
 
-        String[] arme = {"épée", "fourchette", "Bouclier"};
+        String[] arme = {"Baguette Magique", "Pierre", "Epée"};
         model.addAttribute("name", name);
         model.addAttribute("arme", arme[weapon]);
         personnage1.setArme(arme[weapon]);
@@ -51,13 +51,13 @@ public class TimeController {
         model.addAttribute("attack", attackChoice[attack]);
         personnage1.setAttack(attackChoice[attack]);
         if (name.equals("Joker") && personnage1.getAttack().equals("frontale")
-                && personnage1.getArme().equals("fourchette")) {
+                && personnage1.getArme().equals("Pierre")) {
             return "/win";
         }else if (name.equals("Pika") && personnage1.getAttack().equals("dans l'oeil")
-                && personnage1.getArme().equals("épée")){
+                && personnage1.getArme().equals("Baguette Magique")){
             return "/win";
         }else if (name.equals("MacroJoke") && personnage1.getAttack().equals("insulte")
-                && personnage1.getArme().equals("Bouclier")){
+                && personnage1.getArme().equals("Epée")){
             return "/win";
         }
         else {

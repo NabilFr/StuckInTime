@@ -10,11 +10,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TimeController {
+    String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke", };
+    private Hero personnage1 = new Hero("","","");
+    static String name = "";
 
-    private Hero personnage1 = new Hero("default","default","default");
+    @PostMapping("/weapon")
+    public String indexContinue(Model model, @RequestParam(name = "weapon") int choice) {
 
-    @PostMapping("/poneymagique")
-    public String indexContinue(@RequestParam(name = "continue") int choice) {
+           personnage1.setName(heroes[choice]);
+           name = personnage1.getName();
+
+        model.addAttribute("name", name);
 
         return "/weapon";
     }
@@ -23,22 +29,38 @@ public class TimeController {
     public String weaponChoice(Model model, @RequestParam(name = "weapon") int weapon) {
 
         String[] arme = {"épée", "fourchette", "Bouclier"};
-
+        model.addAttribute("name", name);
         model.addAttribute("arme", arme[weapon]);
         personnage1.setArme(arme[weapon]);
-        return "/attack";
+        if (personnage1.getName().equals("Joker")) {
+            return "/attackJoker";
+        }
+        else if(name.equals("Pika")) {
+            return "/attackPika";
+        }
+        else {
+            return "/attackTheMask";
+        }
     }
 
     @PostMapping("/win")
     public String attackChoices(Model model, @RequestParam(name = "attack") int attack) {
 
         String[] attackChoice = {"frontale", "dans l'oeil", "insulte"};
-
+        model.addAttribute("name", name);
         model.addAttribute("attack", attackChoice[attack]);
         personnage1.setAttack(attackChoice[attack]);
-        if (personnage1.getAttack().equals("frontale") && personnage1.getArme().equals("fourchette")) {
+        if (name.equals("Joker") && personnage1.getAttack().equals("frontale")
+                && personnage1.getArme().equals("fourchette")) {
             return "/win";
-        }else {
+        }else if (name.equals("Pika") && personnage1.getAttack().equals("dans l'oeil")
+                && personnage1.getArme().equals("épée")){
+            return "/win";
+        }else if (name.equals("MacroJoke") && personnage1.getAttack().equals("insulte")
+                && personnage1.getArme().equals("Bouclier")){
+            return "/win";
+        }
+        else {
             return "/lose";
         }
     }

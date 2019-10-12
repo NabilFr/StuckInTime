@@ -9,39 +9,40 @@
     <title>Stuck In Time</title>
 </head>
 <body>
+
     <div class="window">
         <h1 id='h1'>Choose your Hero !</h1>
         <h4>Vous vous aventurez dans une dimension inconnue et vous apprêtez à affronter une créature hostile. Choisissez un héro pour avoir une chance de survivre !</h4>
                 <div class="main">
 
-                <form th:action="@{/weapon}" method="post">
-                    <input type="hidden" name="continu" placeholder="Continuer" value="0"/>
-                    <input type="submit" id="hero" value=""></input>
-                </form>
-                <form th:action="@{/weapon}" method="post">
-                    <input type="hidden" name="continu" placeholder="Continuer" value="1"/>
-                    <input type="submit" id="hero2" value=""></input>
-                </form>
-                <form th:action="@{/weapon}" method="post">
-                    <input type="hidden" name="continu" placeholder="Continuer" value="2"/>
-                    <input type="submit" id="hero3" value=""></input>
-                </form>
-                <form th:action="@{/weapon}" method="post">
-                    <input type="hidden" name="continu" placeholder="Continuer" value="3"/>
-                    <input type="submit" id="hero4" value=""></input>
-                </form>
-                <form th:action="@{/weapon}" method="post">
-                    <input type="hidden" name="continu" placeholder="Continuer" value="4"/>
-                    <input type="submit" id="hero5" value=""></input>
-                </form>
-                <form th:action="@{/weapon}" method="post">
-                    <input type="hidden" name="continu" placeholder="Continuer" value="5"/>
-                    <input type="submit" id="hero6" value=""></input>
-                </form>
-
-
-        </div>
+        <form th:action="@{/weapon}" method="post">
+            <input type="hidden" name="weapon" placeholder="Continuer" value="0"/>
+            <input type="submit" id="hero" value=""></input>
+        </form>
+        <form th:action="@{/weapon}" method="post">
+            <input type="hidden" name="weapon" placeholder="Continuer" value="1"/>
+            <input type="submit" id="hero2" value=""></input>
+        </form>
+        <form th:action="@{/weapon}" method="post">
+            <input type="hidden" name="weapon" placeholder="Continuer" value="2"/>
+            <input type="submit" id="hero3" value=""></input>
+        </form>
+        <form th:action="@{/weapon}" method="post">
+            <input type="hidden" name="weapon" placeholder="Continuer" value="3"/>
+            <input type="submit" id="hero4" value=""></input>
+        </form>
+        <form th:action="@{/weapon}" method="post">
+            <input type="hidden" name="continu" placeholder="Continuer" value="4"/>
+            <input type="submit" id="hero5" value=""></input>
+        </form>
+        <form th:action="@{/weapon}" method="post">
+            <input type="hidden" name="weapon" placeholder="Continuer" value="5"/>
+            <input type="submit" id="hero6" value=""></input>
+        </form>
     </div>
+
+</div>
+
     <script type="text/javascript"> 
         var clignotement = function(){ 
            if (document.getElementById('h1').style.visibility=='visible'){ 
@@ -53,5 +54,7 @@
         }; 
         const periode = setInterval(clignotement, 500); 
     </script>
+
+
 </body>
 </html>

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class TimeController {
-    String[] heroes = {"Joker", "Pika", "The Mask"};
+    String[] heroes = {"JCVD", "Bob l'éponge", "Notre projet !!!!", };
     private Hero personnage1 = new Hero("","","");
     static String name = "";
 

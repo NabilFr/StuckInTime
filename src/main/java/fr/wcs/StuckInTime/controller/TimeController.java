@@ -13,13 +13,15 @@ public class TimeController {
 
     @PostMapping("/weapon")
     public String indexContinue(Model model, @RequestParam(name = "weapon") int choice) {
-
         personnage1.setName(choice);
         String name = personnage1.getName();
-
         model.addAttribute("name", name);
-
-        return "/weapon";
+        if (choice >= 0 && choice <= 2) {
+            return "/weapon";
+        }
+        else {
+            return "/holidays";
+        }
     }
 
     @PostMapping("/attack")
@@ -83,15 +85,14 @@ public class TimeController {
             return "/lose";
         }*/
     }
-/*
     @PostMapping("/startAgain")
 
     public String startAgain(Model model, @RequestParam (name="start")int choice) {
-        model.addAttribute("name", name);
+        model.addAttribute("name", personnage1.getName());
 
         if (choice == 0) {
             return "/index";
         }
         return "/youSuck";
-    }*/
+    }
 }

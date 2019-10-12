@@ -5,7 +5,7 @@ public class Hero {
     private int nameIndex;
     private int arme;
     private int attack;
-    private String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke"};
+    private String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke", "The Mask", "Nicky Larson", "Shrek"};
 
     public Hero(int name, int arme, int attack ) {
         this.name = heroes[name];

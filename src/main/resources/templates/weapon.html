@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<form th:action="@{/attack}" method="post">
+    <input type="hidden" name="weapon" placeholder="Epée" value="0"/>
+    <input type="submit" value="Epée">
+</form>
+<form th:action="@{/attack}" method="post">
+    <input type="hidden" name="weapon" placeholder="Fourchette" value="1"/>
+    <input type="submit" value="Fourchette">
+</form>
+<form th:action="@{/attack}" method="post">
+    <input type="hidden" name="weapon" placeholder="Cuillère" value="2"/>
+    <input type="submit" value="Cuillère">
+</form>
+</body>
+</html>

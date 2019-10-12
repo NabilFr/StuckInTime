@@ -2,9 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
     <title>win</title>
 </head>
 <body>
-<p th:text="|${name} win!|"></p>
+<div class="window">
+    <p th:text="${ending}"></p>
+    <form th:action="@{/startAgain}" method="post">
+        <label>Voulez-vous continuer à sauver le monde ?</label>
+        <input type="hidden" value="0" name="start">
+        <input type="submit" value="Je veux continuer !" >
+    </form>
+</div>
+<form th:action="@{/startAgain}" method="post">
+    <label>Voulez-vous continuer à sauver le monde ?</label>
+    <input type="hidden" value="1" name="start">
+    <input type="submit" value="Non merci !" >
+</form>
 </body>
 </html>

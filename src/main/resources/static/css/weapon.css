@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
+
 body{
     display: flex;
     justify-content: center;
@@ -22,10 +23,8 @@ body{
 }
 
 
-#h1{
+h1{
     text-align: center;
-    color: #008000;
-    visibility: visible;
 }
 
 h4{
@@ -43,44 +42,6 @@ h4{
     width: 800px;
     padding-top: 25px;
     padding-bottom: 50px;
-}
-
-
-#hero{
-    background-image: url('../images/heros/jcvd.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
-}
-#hero2{
-    background-image: url('../images/heros/sponge.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
-}
-#hero3{
-    background-image: url('../images/heros/macron.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
-}
-#hero4{
-    background-image: url('../images/heros/mask.gif');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
-}
-#hero5{
-    background-image: url('../images/heros/nicky.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
-}
-#hero6{
-    background-image: url('../images/heros/shrek.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
 }
 
 

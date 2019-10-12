@@ -1,22 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}"/>
-</head>
-<body>
-<form th:action="@{/attack}" method="post">
-    <input type="hidden" name="weapon" placeholder="Epée" value="0"/>
-    <input type="submit" value="Epée">
-</form>
-<form th:action="@{/attack}" method="post">
-    <input type="hidden" name="weapon" placeholder="Fourchette" value="1"/>
-    <input type="submit" value="Fourchette">
-</form>
-<form th:action="@{/attack}" method="post">
-    <input type="hidden" name="weapon" placeholder="Cuillère" value="2"/>
-    <input type="submit" value="Cuillère">
-</form>
-</body>
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Stuck In Time</title>
+        <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    </head>
+
+    <body>
+        <div class="window">
+            <h1 id="h1">Choose your weapon !</h1>
+            <h4 th:text="|${hero} n'a aucune chance de victoire s'il n'a pas un minimum d'équipement, choisissez-lui une arme avec laquelle il combattra votre assaillant.|">Votre héro n'a aucune chance de victoire s'il n'a pas un minimum d'équipement, choisissez-lui une arme avec laquelle il combattra votre assaillant.</h4>
+            <div class="main">
+                <form th:action="@{/attack}" method="post">
+                    <input type="hidden" name="weapon" placeholder="Epée" value="0"/>
+                    <input type="submit" id="weapon" value=""></input>
+                </form>
+                <form th:action="@{/attack}" method="post">
+                    <input type="hidden" name="weapon" placeholder="Caillasse" value="1"/>
+                    <input type="submit" id="weapon2" value=""></input>
+                </form>
+                <form th:action="@{/attack}" method="post">
+                    <input type="hidden" name="weapon" placeholder="Baguette Magique" value="2"/>
+                    <input type="submit" id="weapon3" value=""></input>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript"> 
+            var clignotement = function(){ 
+               if (document.getElementById('h1').style.visibility=='visible'){ 
+                  document.getElementById('h1').style.visibility='hidden'; 
+               } 
+               else{ 
+               document.getElementById('h1').style.visibility='visible'; 
+               } 
+            }; 
+            const periode = setInterval(clignotement, 500); 
+        </script>
+    </body>
+    
 </html>

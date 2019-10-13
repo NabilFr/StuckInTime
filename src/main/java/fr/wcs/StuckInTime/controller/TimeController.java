@@ -6,10 +6,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 @Controller
 public class TimeController {
     private Hero personnage1 = new Hero(0,0,0);
+
+    @PostMapping("/")
+    public String chooseYourName(Model model, @RequestParam(name = "username")String name) {
+        personnage1.setName(name);
+        model.addAttribute("name", name);
+        return "/choiceHero";
+    }
+
 
     @PostMapping("/weapon")
     public String indexContinue(Model model, @RequestParam(name = "weapon") int choice) {
@@ -37,7 +46,6 @@ public class TimeController {
         else {
             return "/attackJoker";
         }
-
     }
 
     @PostMapping("/win")
@@ -71,19 +79,6 @@ public class TimeController {
         }
         model.addAttribute("ending", ending);
         return "/win";
-        /*if (name.equals("Joker") && personnage1.getAttack().equals("frontale")
-                && personnage1.getArme().equals("Pierre")) {
-            return "/win";
-        }else if (name.equals("Pika") && personnage1.getAttack().equals("dans l'oeil")
-                && personnage1.getArme().equals("Baguette Magique")){
-            return "/win";
-        }else if (name.equals("MacroJoke") && personnage1.getAttack().equals("insulte")
-                && personnage1.getArme().equals("Epée")){
-            return "/win";
-        }
-        else {
-            return "/lose";
-        }*/
     }
     @PostMapping("/startAgain")
 
@@ -91,7 +86,7 @@ public class TimeController {
         model.addAttribute("name", personnage1.getName());
 
         if (choice == 0) {
-            return "/index";
+            return "/choiceHero";
         }
         return "/youSuck";
     }

@@ -12,53 +12,39 @@
 
         <div class="window">
 
-            <h1 id='h1'>Choose your Hero !</h1>
+            <h1 id='blink'>Choose your Hero !</h1>
             <div class="narration">
-                <h4 th:text="|${name} s'aventure dans une dimension inconnue et s'apprête à affronter une créature hostile. Choisissez-lui un partenaire pour qu'il ait une chance de survie !|">Vous vous aventurez dans une dimension inconnue et vous vous apprêtez à affronter une créature hostile. Choisissez un partenaire pour avoir une chance de survivre !</h4>
+                <h4 th:text="|${name} est un chaton apeuré. Il a besoin d'aide pour la bagarre !|">Choisissez un partenaire !</h4>
             </div>
-            <div class="main">
-
+            <div class="heros">
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="0"/>
-                    <input type="submit" id="hero" value=""></input>
+                    <input class="heroPic" type="submit" id="hero1" value="" th:style="|display:${state};|"></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="1"/>
-                    <input disabled type="submit" id="hero2" value=""></input>
+                    <input class="heroPic" type="submit" id="hero2" value=""></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="2"/>
-                    <input disabled type="submit" id="hero3" value=""></input>
+                    <input class="heroPic" type="submit" id="hero3" value=""></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="3"/>
-                    <input type="submit" id="hero4" value=""></input>
+                    <input class="heroPic" type="submit" id="hero4" value=""></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="4"/>
-                    <input disabled type="submit" id="hero5" value=""></input>
+                    <input class="heroPic" type="submit" id="hero5" value=""></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="5"/>
-                    <input type="submit" id="hero6" value=""></input>
+                    <input class="heroPic" type="submit" id="hero6" value=""></input>
                 </form>
 
             </div>
 
         </div>
-
-        <script type="text/javascript">
-            var clignotement = function(){
-               if (document.getElementById('h1').style.visibility=='visible'){
-                  document.getElementById('h1').style.visibility='hidden';
-               }
-               else{
-               document.getElementById('h1').style.visibility='visible';
-               }
-            };
-            const periode = setInterval(clignotement, 500);
-        </script>
-
-
+        <script type="text/javascript" th:src="@{/js/blink.js}"></script>
     </body>
 </html>

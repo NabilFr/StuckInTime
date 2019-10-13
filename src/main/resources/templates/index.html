@@ -12,55 +12,18 @@
 
 <!--<header th:replace="header :: top"></header>-->
 <div class="window">
-    <h1 id='h1'>Hello kitty !</h1>
+    <h1>Hello kitty !</h1>
     <div class="narration">
-        <p id ="story">Bonjour petit chat ! Tu t'es perdu et t'apprêtes à vivre une aventure dangereuse... Heureusement tu disposes de 9 vies, petit veinard !<br>Mais au fait, quel est ton nom ?</p>
+        <p id ="story">Bonjour petit chat ! Tu t'es perdu et tu t'apprêtes à vivre une aventure dangereuse... Heureusement tu disposes de 9 vies, petit veinard !<br>Mais au fait, quel est ton nom ?</p>
         <p id="story2"></p>
     </div>
-    <div class="index">
-        <form id="nameForm" th:action="@{/choiceHero}" method="post">
+    <div class="index" id="form">
+        <form class="form" id="nameForm" th:action="@{/hero}" method="post">
             <input type="text" name="username" required>
             <input type="submit" value="Commencer l'aventure">
         </form>
     </div>
 </div>
-<script type="text/javascript">
-
-    var chaine = document.getElementById("story").innerHTML;
-    var nb_car = chaine.length;
-    var tableau = chaine.split("");
-    texte = new Array;
-    var txt = '';
-    var nb_msg = nb_car - 1;
-    for (i=0; i<nb_car; i++) {
-        texte[i] = txt+tableau[i];
-        var txt = texte[i];
-    }
-
-    actual_texte = 0;
-    var defilement = null;
-    function changeMessage() {
-        document.getElementById("story2").innerHTML = texte[actual_texte];
-        actual_texte++;
-        if(actual_texte >= texte.length) {
-            actual_texte = nb_msg;
-            clearInterval(defilement);
-            document.getElementById('nameForm').style.visibility = 'visible';
-            setInterval(clignotement, 500);
-        }
-    }
-
-    var clignotement = function () {
-        if (document.getElementById('dead').style.visibility == 'visible') {
-            document.getElementById('dead').style.visibility = 'hidden';
-        } else {
-            document.getElementById('dead').style.visibility = 'visible';
-        }
-    }
-
-    if(document.getElementById) {
-        defilement = setInterval(changeMessage,80)
-    }
-</script>
+<script type="text/javascript" th:src="@{/js/blink.js}"></script>
 </body>
 </html>

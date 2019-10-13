@@ -5,9 +5,11 @@ public class Hero {
     private String hero;
     private int heroIndex;
     private int lives;
+    private int[] heroState;
     private int arme;
     private int attack;
     private int score;
+
     private String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke", "The Mask", "Nicky Larson", "Shreïk"};
     private String[][] attacks = {{"Coup de pied retourné", "Réfléchir", "Lancer dans la tronche", "Gagner le combat", "Super mouvements stylés", "Un discours"},
             {"", ""},
@@ -21,6 +23,7 @@ public class Hero {
         this.hero = "personne";
         this.score = 0;
         this.lives = 9;
+        this.heroState = new int[] {0, 0, 0, 0, 0, 0};
     }
 
     public void setName(String name) {
@@ -44,7 +47,7 @@ public class Hero {
         this.setHero();
     }
 
-    public int getHeroIndexIndex() {
+    public int getHeroIndex() {
         return heroIndex;
     }
 
@@ -54,6 +57,14 @@ public class Hero {
 
     public int getLives() {
         return this.lives;
+    }
+
+    public void setHeroState(int heroState) {
+        this.heroState[this.heroIndex] = heroState;
+    }
+
+    public int[] getHeroState() {
+        return this.heroState;
     }
 
     public void setArme(int arme) {

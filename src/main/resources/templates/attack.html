@@ -9,28 +9,18 @@
         <div class="window">
     <!--        <header th:replace="header :: top"></header>-->
 
-            <h1 id='h1'>Choose your skills !</h1>
+            <h1 id='blink'>Choose your skills !</h1>
 
             <br>
             <form th:action="@{/win}" method="post">
                 <input type="hidden" name="attack" value="0"/>
-                <input type="submit" th:value="${attack1}">
+                <input class="attackButton" type="submit" th:value="${attack1}">
             </form>
             <form th:action="@{/win}" method="post">
                 <input type="hidden" name="attack" value="1"/>
-                <input type="submit" th:value="${attack2}">
+                <input class="attackButton" type="submit" th:value="${attack2}">
             </form>
         </div>
-        <script type="text/javascript">
-            var clignotement = function(){
-                if (document.getElementById('h1').style.visibility=='visible'){
-                    document.getElementById('h1').style.visibility='hidden';
-                }
-                else{
-                    document.getElementById('h1').style.visibility='visible';
-                }
-            };
-            const periode = setInterval(clignotement, 500);
-        </script>
+        <script type="text/javascript" th:src="@{/js/blink.js}"></script>
     </body>
 </html>

@@ -3,8 +3,8 @@
 html {
     display: flex;
     justify-content: center;
-
 }
+
 body{
     display: flex;
     flex-direction: column;
@@ -44,12 +44,17 @@ body{
     text-align: justify;
 }
 
-#dead {
-    visibility: hidden;
+h1 {
+    text-align: center;
     color: #008000;
 }
 
-#h1 h1{
+#blink {
+    visibility: hidden;
+}
+
+#dead {
+    visibility: hidden;
     text-align: center;
     color: #008000;
 }
@@ -59,10 +64,7 @@ h4{
     color: white;
 }
 
-
-
 .main{
-
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -71,9 +73,10 @@ h4{
     padding-bottom: 50px;
 }
 
-form {
+.form {
     font-size: 1.8em;
     margin-bottom: 15px;
+    width: 80%;
 }
 
 input {
@@ -82,7 +85,7 @@ input {
     padding: 0.5em 1em;
 }
 
-#retry {
+#form {
     visibility: hidden;
     display: flex;
     flex-direction: column;
@@ -92,7 +95,8 @@ input {
     margin-top: 30px;
 }
 
-/* CHOIX DU NOM DU JOUEUR*/
+
+/* -------------------- INTRO JOUEUR -------------------- */
 
 .index {
     display: flex;
@@ -106,69 +110,76 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
-    visibility: hidden;
 }
 
 #nameForm input:nth-child(0) {
     color: #008000;
 }
 
-#hero{
-    background-image: url('../images/heros/jcvd.jpg');
+
+/* -------------------- CHOIX DU HEROS -------------------- */
+
+.heros{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 600px;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+.heroPic {
     background-size: contain;
-    width: 250px;
-    height: 250px;
+    width: 180px;
+    height: 180px;
+}
+
+#hero1{
+    background-image: url('../images/heros/jcvd.jpg');
 }
 #hero2{
-    background-image: url('../images/heros/2-blur.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
+    background-image: url('../images/heros/sponge.jpg');
 }
 #hero3{
-    background-image: url('../images/heros/3-blur.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
+    background-image: url('../images/heros/macron.jpg');
 }
 #hero4{
     background-image: url('../images/heros/mask.gif');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
 }
 #hero5{
-    background-image: url('../images/heros/5-blur.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
+    background-image: url('../images/heros/nicky.jpg');
 }
 #hero6{
-    background-image: url('../images/heros/6-blur.jpg');
+    background-image: url('../images/heros/shrek.jpg');
+}
+
+
+/* -------------------- CHOIX DE L'ARME -------------------- */
+
+.weaponPic {
     background-size: contain;
     width: 250px;
     height: 250px;
 }
 
-
-#weapon{
+#weapon1{
     background-image: url('../images/weapons/wand.jpeg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
 }
 #weapon2{
     background-image: url('../images/weapons/rock.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
 }
 #weapon3{
     background-image: url('../images/weapons/sword.jpg');
-    background-size: contain;
-    width: 250px;
-    height: 250px;
 }
+
+
+/* -------------------- CHOIX DE L'ATTAQUE -------------------- */
+
+.attackButton {
+    min-width: 500px;
+}
+
+
 header {
     display: flex;
     justify-content: center;

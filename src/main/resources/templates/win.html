@@ -1,66 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
-    <title>win</title>
-</head>
-<body>
-<div class="window">
-    <div class="narration">
-        <p id ="story" th:text="${ending}">Ceci est un test</p>
-        <p id="story2"></p>
-    </div>
-    <h1 id="dead">Vous êtes mort !</h1>
-    <form id="retry" th:action="@{/startAgain}" method="post">
-        <label class="retry">Voulez-vous continuer à sauver le monde ?</label>
-        <div>
-            <input type="hidden" value="0" name="start">
-            <input type="submit" value="Je veux continuer !" >
-            <input type="hidden" value="1" name="start">
-            <input type="submit" value="Non merci !" >
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+        <title>win</title>
+    </head>
+    <body>
+    <div class="window">
+        <div class="narration">
+            <p id ="story" th:text="${ending}">Ceci est un test</p>
+            <p id="story2"></p>
         </div>
-    </form>
-    <p th:text="|Vous gagnez ${points} points d'expérience.|">Vous gagnez que dalle</p>
-</div>
-
-<script type="text/javascript">
-
-    var chaine = document.getElementById("story").innerHTML;
-    var nb_car = chaine.length;
-    var tableau = chaine.split("");
-    texte = new Array;
-    var txt = '';
-    var nb_msg = nb_car - 1;
-    for (i=0; i<nb_car; i++) {
-        texte[i] = txt+tableau[i];
-        var txt = texte[i];
-    }
-
-    actual_texte = 0;
-    var defilement = null;
-    function changeMessage() {
-        document.getElementById("story2").innerHTML = texte[actual_texte];
-        actual_texte++;
-        if(actual_texte >= texte.length) {
-            actual_texte = nb_msg;
-            clearInterval(defilement);
-            document.getElementById('retry').style.visibility = 'visible';
-            setInterval(clignotement, 500);
-        }
-    }
-
-    var clignotement = function () {
-        if (document.getElementById('dead').style.visibility == 'visible') {
-            document.getElementById('dead').style.visibility = 'hidden';
-        } else {
-            document.getElementById('dead').style.visibility = 'visible';
-        }
-    }
-
-    if(document.getElementById) {
-        defilement = setInterval(changeMessage,80)
-    }
-</script>
+        <h1 id="dead">Vous êtes mort !</h1>
+        <form class="form" id="form" th:action="@{/startAgain}" method="post">
+            <label class="retry">Voulez-vous continuer à sauver le monde ?</label>
+            <div>
+                <input type="hidden" value="0" name="start">
+                <input type="submit" value="Je veux continuer !" >
+                <input type="hidden" value="1" name="start">
+                <input type="submit" value="Non merci !" >
+            </div>
+            <p th:text="|Vous gagnez ${points} points d'expérience.|">Vous gagnez que dalle</p>
+        </form>
+    </div>
+    <script type="text/javascript" th:src="@{/js/blink.js}"></script>
 </body>
 </html>

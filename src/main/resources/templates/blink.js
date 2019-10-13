@@ -1,3 +1,0 @@
-function Blink(){
-    document.getElementById
-}

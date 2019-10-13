@@ -9,37 +9,25 @@
     <body>
 <!--        <header th:replace="header :: top"></header>-->
         <div class="window">
-            <h1 id="h1">Choose your weapon !</h1>
+            <h1 id="blink">Choose your weapon !</h1>
             <div class="narration">
-                <h4 th:text="|${hero} et ${name} n'ont aucune chance de victoire s'ils n'ont pas un minimum d'équipement, choisissez une arme avec laquelle ${hero} combattra le géant|">Votre héro n'a aucune chance de victoire s'il n'a pas un minimum d'équipement, choisissez-lui une arme avec laquelle il combattra votre assaillant.</h4>
+                <h4 th:text="|${name} et ${hero} n'ont aucune chance de victoire s'ils n'ont pas un minimum d'équipement, choisissez une arme avec laquelle ${hero} combattra le géant|">Votre héro n'a aucune chance de victoire s'il n'a pas un minimum d'équipement, choisissez-lui une arme avec laquelle il combattra votre assaillant.</h4>
             </div>
             <div class="main">
                 <form th:action="@{/attack}" method="post">
                     <input type="hidden" name="weapon" placeholder="Epée" value="0"/>
-                    <input type="submit" id="weapon" value=""></input>
+                    <input class="weaponPic" type="submit" id="weapon1" value=""></input>
                 </form>
                 <form th:action="@{/attack}" method="post">
                     <input type="hidden" name="weapon" placeholder="Caillasse" value="1"/>
-                    <input type="submit" id="weapon2" value=""></input>
+                    <input class="weaponPic" type="submit" id="weapon2" value=""></input>
                 </form>
                 <form th:action="@{/attack}" method="post">
                     <input type="hidden" name="weapon" placeholder="Baguette Magique" value="2"/>
-                    <input type="submit" id="weapon3" value=""></input>
+                    <input class="weaponPic" type="submit" id="weapon3" value=""></input>
                 </form>
             </div>
         </div>
-        <script type="text/javascript"> 
-            var clignotement = function(){ 
-               if (document.getElementById('h1').style.visibility=='visible'){ 
-                  document.getElementById('h1').style.visibility='hidden'; 
-               } 
-               else{ 
-               document.getElementById('h1').style.visibility='visible'; 
-               } 
-            }; 
-            const periode = setInterval(clignotement, 500); 
-        </script>
+        <script type="text/javascript" th:src="@{/js/blink.js}"></script>
     </body>
-    
-
 </html>

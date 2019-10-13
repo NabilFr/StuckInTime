@@ -11,10 +11,18 @@ import java.util.Arrays;
 public class TimeController {
     private Hero personnage1 = new Hero();
 
+    @GetMapping("/")
+    public String mainRoute(Model model) {
+        model.addAttribute(personnage1.getScore());
+        return "/index";
+    }
+
+
     @PostMapping("/choiceHero")
     public String chooseYourName(Model model, @RequestParam(name = "username")String name) {
         personnage1.setName(name);
         model.addAttribute("name", name);
+        model.addAttribute("sccore", personnage1.getScore());
         return "/choiceHero";
     }
 
@@ -24,6 +32,7 @@ public class TimeController {
         personnage1.setHeroIndex(choice);
         String hero = personnage1.getHero();
         model.addAttribute("hero", hero);
+        model.addAttribute("sccore", personnage1.getScore());
         if (choice == 0 || choice == 3) {
             return "/weapon";
         }
@@ -38,6 +47,7 @@ public class TimeController {
         String[] arme = {"Baguette Magique", "Pierre", "Epée"};
         model.addAttribute("name", personnage1.getHero());
         model.addAttribute("arme", arme[weapon]);
+        model.addAttribute("sccore", personnage1.getScore());
         String attack1;
         String attack2;
         if (weapon == 0) {
@@ -66,6 +76,8 @@ public class TimeController {
         String[] attackChoice = {"frontale", "dans l'oeil", "insulte"};
         model.addAttribute("name", personnage1.getName());
         model.addAttribute("attack", attackChoice[attack]);
+        model.addAttribute("sccore", personnage1.getScore());
+
         personnage1.setAttack(attack);
         int[] scenario = {personnage1.getHeroIndexIndex(), personnage1.getArme(), personnage1.getAttack()};
         String ending = "";
@@ -143,6 +155,8 @@ public class TimeController {
 
     public String startAgain(Model model, @RequestParam (name="start")int choice) {
         model.addAttribute("name", personnage1.getName());
+        model.addAttribute("sccore", personnage1.getScore());
+
 
         if (choice == 0) {
             return "/choiceHero";

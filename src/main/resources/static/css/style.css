@@ -59,12 +59,7 @@ h4{
     color: white;
 }
 
-#retry {
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 .main{
 
@@ -87,6 +82,16 @@ input {
     padding: 0.5em 1em;
 }
 
+#retry {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+    color: white;
+    margin-top: 30px;
+}
+
 /* CHOIX DU NOM DU JOUEUR*/
 
 .index {
@@ -104,6 +109,10 @@ input {
     visibility: hidden;
 }
 
+#nameForm input:nth-child(0) {
+    color: #008000;
+}
+
 #hero{
     background-image: url('../images/heros/jcvd.jpg');
     background-size: contain;
@@ -111,13 +120,13 @@ input {
     height: 250px;
 }
 #hero2{
-    background-image: url('../images/heros/sponge.jpg');
+    background-image: url('../images/heros/2-blur.jpg');
     background-size: contain;
     width: 250px;
     height: 250px;
 }
 #hero3{
-    background-image: url('../images/heros/macron.jpg');
+    background-image: url('../images/heros/3-blur.jpg');
     background-size: contain;
     width: 250px;
     height: 250px;
@@ -129,13 +138,13 @@ input {
     height: 250px;
 }
 #hero5{
-    background-image: url('../images/heros/nicky.jpg');
+    background-image: url('../images/heros/5-blur.jpg');
     background-size: contain;
     width: 250px;
     height: 250px;
 }
 #hero6{
-    background-image: url('../images/heros/shrek.jpg');
+    background-image: url('../images/heros/6-blur.jpg');
     background-size: contain;
     width: 250px;
     height: 250px;

@@ -8,7 +8,7 @@ public class Hero {
     private int arme;
     private int attack;
     private int score;
-    private String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke", "The Mask", "Nicky Larson", "Shrek"};
+    private String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke", "The Mask", "Nicky Larson", "Shreïk"};
     private String[][] attacks = {{"Coup de pied retourné", "Réfléchir", "Lancer dans la tronche", "Gagner le combat", "Super mouvements stylés", "Un discours"},
             {"", ""},
             {"", ""},
@@ -17,6 +17,8 @@ public class Hero {
             {"", ""}};
 
     public Hero() {
+        this.name = "Mushu";
+        this.hero = "personne";
         this.score = 0;
         this.lives = 9;
     }

@@ -14,7 +14,7 @@
 
             <h1 id='h1'>Choose your Hero !</h1>
             <div class="narration">
-                <h4 th:text="|${name} s'aventure dans une dimension inconnue et s'apprête à affronter une créature hostile.\nChoisissez-lui un partenaire pour qu'il ait une chance de survie !|">Vous vous aventurez dans une dimension inconnue et vous vous apprêtez à affronter une créature hostile. Choisissez un partenaire pour avoir une chance de survivre !</h4>
+                <h4 th:text="|${name} s'aventure dans une dimension inconnue et s'apprête à affronter une créature hostile. Choisissez-lui un partenaire pour qu'il ait une chance de survie !|">Vous vous aventurez dans une dimension inconnue et vous vous apprêtez à affronter une créature hostile. Choisissez un partenaire pour avoir une chance de survivre !</h4>
             </div>
             <div class="main">
 
@@ -24,11 +24,11 @@
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="1"/>
-                    <input type="submit" id="hero2" value=""></input>
+                    <input disabled type="submit" id="hero2" value=""></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="2"/>
-                    <input type="submit" id="hero3" value=""></input>
+                    <input disabled type="submit" id="hero3" value=""></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="3"/>
@@ -36,7 +36,7 @@
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="4"/>
-                    <input type="submit" id="hero5" value=""></input>
+                    <input disabled type="submit" id="hero5" value=""></input>
                 </form>
                 <form th:action="@{/weapon}" method="post">
                     <input type="hidden" name="weapon" placeholder="Continuer" value="5"/>

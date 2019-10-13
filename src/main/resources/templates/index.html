@@ -12,10 +12,10 @@
 
 <!--<header th:replace="header :: top"></header>-->
 <div class="window">
-    <h1 id='h1' th:text="|Quel est votre nom ?|">Your name</h1>
+    <h1 id='h1' th:text="|Choose your blaz|">Your name</h1>
     <div class="main">
         <form th:action="@{/choiceHero}" method="post">
-            <input type="text" name="username">
+            <input type="text" name="username" required>
             <input type="submit" value="Entrer">
         </form>
     </div>

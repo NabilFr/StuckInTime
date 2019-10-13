@@ -19,8 +19,13 @@ public class TimeController {
 
 
     @PostMapping("/choiceHero")
-    public String chooseYourName(Model model, @RequestParam(name = "username")String name) {
-        personnage1.setName(name);
+    public String chooseYourName(Model model, @RequestParam(name = "username", required=false, defaultValue = "") String name) {
+        if (name.length() != 0) {
+            personnage1.setName(name);
+        }
+        else {
+            name = personnage1.getName();
+        }
         model.addAttribute("name", name);
         model.addAttribute("sccore", personnage1.getScore());
         return "/choiceHero";
@@ -85,7 +90,7 @@ public class TimeController {
         int score = 0;
         switch (Arrays.toString(scenario)) {
             case "[0, 0, 0]":
-                ending = String.format("JC est dégoûté par le choix de %s d'une arme en plastique non recyclable et envoie valser l'objet d'un magnifique coup de pied retourné. Il abandonne %s à sa non awareness qui se fait écrabouiller comme une merde par le géant.", personnage1.getName(), personnage1.getName());
+                ending = String.format("JC est dégoûté par le choix de %s.   Une arme en plastique non recyclable !! Pas très aware tout ça. Il envoie valser l'objet d'un magnifique coup de pied retourné et abandonne %s qui se fait écrabouiller comme une merde.", personnage1.getName(), personnage1.getName());
                 score = 5;
                 personnage1.setScore(score);
                 break;
@@ -153,7 +158,6 @@ public class TimeController {
         return "/win";
     }
     @PostMapping("/startAgain")
-
     public String startAgain(Model model, @RequestParam (name="start")int choice) {
         model.addAttribute("name", personnage1.getName());
         model.addAttribute("sccore", personnage1.getScore());
@@ -162,6 +166,11 @@ public class TimeController {
         if (choice == 0) {
             return "/choiceHero";
         }
+        return "/youSuck";
+    }
+
+    @GetMapping("/youSuck")
+    public String test() {
         return "/youSuck";
     }
 }

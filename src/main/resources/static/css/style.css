@@ -14,7 +14,7 @@ body{
 
 .window{
     margin-top: 15px;
-    max-width: 1000px;
+    width: 1000px;
     border: gray 2px solid;
     display: flex;
     justify-content: center;
@@ -27,11 +27,23 @@ body{
     padding-top: 50px;
 }
 
+#story{
+    display: none;
+}
 
-#h1{
+.bloc {
+    width: 80%;
+    text-align: center;
+}
+
+#dead {
+    visibility: hidden;
+    color: #008000;
+}
+
+#h1 h1{
     text-align: center;
     color: #008000;
-    visibility: visible;
 }
 
 h4{
@@ -39,12 +51,17 @@ h4{
     width: 80%;
 }
 
+#retry {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .main{
 
     display: flex;
     flex-flow: row wrap;
-
     justify-content: space-between;
     width: 800px;
     padding-top: 25px;

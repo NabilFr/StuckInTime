@@ -13,7 +13,10 @@
     <div class="window">
         <h1 id='h1' th:text="|*{hero} est en vacances !|">Ce héros est en vacances !</h1>
     <div class="main">
-        <a th:href="@{/choiceHero}">Retour au choix du héros</a>
+        <form th:action="@{/choiceHero}" method="post">
+            <input type="hidden" name="heroChoice">
+            <input type="submit" value="Choisir un héros moins absent">
+        </form>
     </div>
     </div>
 

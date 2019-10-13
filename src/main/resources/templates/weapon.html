@@ -10,7 +10,7 @@
 <!--        <header th:replace="header :: top"></header>-->
         <div class="window">
             <h1 id="h1">Choose your weapon !</h1>
-            <h4 th:text="|${hero} et vous n'avez aucune chance de victoire si vous n'avez pas un minimum d'équipement, choisissez-lui une arme avec laquelle il combattra votre assaillant.|">Votre héro n'a aucune chance de victoire s'il n'a pas un minimum d'équipement, choisissez-lui une arme avec laquelle il combattra votre assaillant.</h4>
+            <h4 th:text="|${hero} et ${name} n'ont aucune chance de victoire s'ils n'ont pas un minimum d'équipement, choisissez une arme avec laquelle ${hero} combattra le géant|">Votre héro n'a aucune chance de victoire s'il n'a pas un minimum d'équipement, choisissez-lui une arme avec laquelle il combattra votre assaillant.</h4>
             <div class="main">
                 <form th:action="@{/attack}" method="post">
                     <input type="hidden" name="weapon" placeholder="Epée" value="0"/>

@@ -8,7 +8,7 @@ public class Hero {
     private int attack;
     private int score;
     private String[] heroes = {"JCVD", "Bob l'éponge", "MacroJoke", "The Mask", "Nicky Larson", "Shrek"};
-    private String[][] attacks = {{"Coup de pied retourné", "Réflexion philosophique", "Coup de pied retourné", "Réflexion philosophique", "Coup de pied retourné", "Réflexion philosophique"},
+    private String[][] attacks = {{"Coup de pied retourné", "Réfléchir", "Lancer dans la tronche", "Gagner le combat", "Super mouvements stylés", "Un discours"},
             {"", ""},
             {"", ""},
             {"Attaque de lumière", "Frapper le monstre", "Lancer", "Viser l'orteil", "Foncer dans le tas", "Pose héroïque"},

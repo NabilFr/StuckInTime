@@ -32,6 +32,7 @@ public class TimeController {
         personnage1.setHeroIndex(choice);
         String hero = personnage1.getHero();
         model.addAttribute("hero", hero);
+        model.addAttribute("name", personnage1.getName());
         model.addAttribute("sccore", personnage1.getScore());
         if (choice == 0 || choice == 3) {
             return "/weapon";
@@ -44,7 +45,7 @@ public class TimeController {
     @PostMapping("/attack")
     public String weaponChoice(Model model, @RequestParam(name = "weapon") int weapon) {
 
-        String[] arme = {"Baguette Magique", "Pierre", "Epée"};
+        String[] arme = {"la baguette magique", "la pierre", "l'épée"};
         model.addAttribute("name", personnage1.getHero());
         model.addAttribute("arme", arme[weapon]);
         model.addAttribute("sccore", personnage1.getScore());

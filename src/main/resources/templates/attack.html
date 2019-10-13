@@ -8,7 +8,7 @@
 <body>
     <div class="window">
 <!--        <header th:replace="header :: top"></header>-->
-        <article th:text="|Vous avez choisi le ${arme} pour ${name}. Que doit-il en faire ?|">Think you can win ?</article>
+        <article th:text="|Vous avez choisi ${arme} pour ${name}. Que doit-il en faire ?|">Think you can win ?</article>
 
         <br>
         <form th:action="@{/win}" method="post">

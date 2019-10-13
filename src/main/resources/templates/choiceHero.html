@@ -12,10 +12,8 @@
 
     <div class="window">
 
-        <p th:text="|Vous avez cumulé ${score}|"> Score du joueur</p>
-
         <h1 id='h1'>Choose your Hero !</h1>
-        <h4>Vous vous aventurez dans une dimension inconnue et vous vous apprêtez à affronter une créature hostile. Choisissez un partenaire pour avoir une chance de survivre !</h4>
+        <h4 th:text="|${name} s'aventure dans une dimension inconnue et s'apprête à affronter une créature hostile. Choisissez-lui un partenaire pour qu'il ait une chance de survie !|">Vous vous aventurez dans une dimension inconnue et vous vous apprêtez à affronter une créature hostile. Choisissez un partenaire pour avoir une chance de survivre !</h4>
                 <div class="main">
 
         <form th:action="@{/weapon}" method="post">

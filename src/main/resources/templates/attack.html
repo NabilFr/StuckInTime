@@ -7,16 +7,18 @@
 </head>
 <body>
     <div class="window">
-<article th:text="|Vous avez choisi le ${arme} pour ${name}. Que doit-il en faire ?|">Think you can win ?</article>
-<br>
-<form th:action="@{/win}" method="post">
-    <input type="hidden" name="attack" value="0"/>
-    <input type="submit" th:value="${attack1}">
-</form>
-<form th:action="@{/win}" method="post">
-    <input type="hidden" name="attack" value="1"/>
-    <input type="submit" th:value="${attack2}">
-</form>
+        <header th:replace="header :: top"></header>
+        <article th:text="|Vous avez choisi le ${arme} pour ${name}. Que doit-il en faire ?|">Think you can win ?</article>
+
+        <br>
+        <form th:action="@{/win}" method="post">
+            <input type="hidden" name="attack" value="0"/>
+            <input type="submit" th:value="${attack1}">
+        </form>
+        <form th:action="@{/win}" method="post">
+            <input type="hidden" name="attack" value="1"/>
+            <input type="submit" th:value="${attack2}">
+        </form>
     </div>
 </body>
 </html>

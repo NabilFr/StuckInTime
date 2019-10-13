@@ -22,8 +22,8 @@ public class TimeController {
     @PostMapping("/weapon")
     public String indexContinue(Model model, @RequestParam(name = "weapon") int choice) {
         personnage1.setHeroIndex(choice);
-        String name = personnage1.getHero();
-        model.addAttribute("name", name);
+        String hero = personnage1.getHero();
+        model.addAttribute("hero", hero);
         if (choice == 0 || choice == 3) {
             return "/weapon";
         }

@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Stuck In Time</title>
+</head>
+<body>
+    <header th:fragment="top">
+        <div class="window">
+            <div class="main">
+                <p th:text="|Vous avez cumulé ${score}|"> Score du joueur</p>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

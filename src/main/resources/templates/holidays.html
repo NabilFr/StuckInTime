@@ -11,7 +11,9 @@
 <body>
 <!--<header th:replace="header :: top"></header>-->
     <div class="window">
-        <h1 id='h1' th:text="|*{hero} est en vacances !|">Ce héros est en vacances !</h1>
+        <div class="bloc">
+            <h1 id='h1' th:text="|*{hero} est en vacances !|">Ce héros est en vacances !</h1>
+        </div>
     <div class="main">
         <form th:action="@{/choiceHero}" method="post">
             <input type="hidden" name="heroChoice">

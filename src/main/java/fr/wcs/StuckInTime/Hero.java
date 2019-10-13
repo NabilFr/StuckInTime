@@ -4,6 +4,7 @@ public class Hero {
     private String name;
     private String hero;
     private int heroIndex;
+    private int lives;
     private int arme;
     private int attack;
     private int score;
@@ -17,6 +18,7 @@ public class Hero {
 
     public Hero() {
         this.score = 0;
+        this.lives = 9;
     }
 
     public void setName(String name) {
@@ -42,6 +44,14 @@ public class Hero {
 
     public int getHeroIndexIndex() {
         return heroIndex;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    public int getLives() {
+        return this.lives;
     }
 
     public void setArme(int arme) {

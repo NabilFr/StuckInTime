@@ -90,7 +90,7 @@ public class TimeController {
         int score = 0;
         switch (Arrays.toString(scenario)) {
             case "[0, 0, 0]":
-                ending = String.format("JC est dégoûté par le choix de %s.   Une arme en plastique non recyclable !! Pas très aware tout ça. Il envoie valser l'objet d'un magnifique coup de pied retourné et abandonne %s qui se fait écrabouiller comme une merde.", personnage1.getName(), personnage1.getName());
+                ending = String.format("JC est dégoûté par le choix de %s.   Une arme en plastique non recyclable !! Pas très aware tout ça.     \nIl envoie valser l'objet d'un magnifique coup de pied retourné et abandonne %s qui se fait écrabouiller comme une merde.", personnage1.getName(), personnage1.getName());
                 score = 5;
                 personnage1.setScore(score);
                 break;

@@ -15,16 +15,17 @@ body{
 .window{
     margin-top: 15px;
     width: 1000px;
+    min-height: calc(100vh - 100px);
     border: gray 2px solid;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background: black;
-    color: white;
     font-family:'Press Start 2P', cursive, Courier, monospace;
     line-height: 1.5em;
     padding-top: 50px;
+    color: #008000;
 }
 
 #story{
@@ -33,7 +34,14 @@ body{
 
 .bloc {
     width: 80%;
-    text-align: center;
+    line-height: 3em;
+}
+
+.narration {
+    line-height: 1.8em;
+    color: white;
+    width: 80%;
+    text-align: justify;
 }
 
 #dead {
@@ -48,7 +56,7 @@ body{
 
 h4{
     text-align: justify;
-    width: 80%;
+    color: white;
 }
 
 #retry {
@@ -68,8 +76,32 @@ h4{
     padding-bottom: 50px;
 }
 
+form {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
 input {
     margin: 12px 0;
+    font-family: 'Press Start 2P', cursive, Courier, monospace;
+    padding: 0.5em 1em;
+}
+
+/* CHOIX DU NOM DU JOUEUR*/
+
+.index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+#nameForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
 }
 
 #hero{

@@ -11,9 +11,17 @@ import java.util.Arrays;
 public class TimeController {
     private Hero personnage1 = new Hero();
 
+    @PostMapping("/choiceHero")
+    public String chooseYourName(Model model, @RequestParam(name = "username")String name) {
+        personnage1.setName(name);
+        model.addAttribute("name", name);
+        return "/choiceHero";
+    }
+
+
     @PostMapping("/weapon")
     public String indexContinue(Model model, @RequestParam(name = "weapon") int choice) {
-        personnage1.setName(choice);
+        personnage1.setHero(choice);
         String name = personnage1.getName();
         model.addAttribute("name", name);
         if (choice >= 0 && choice <= 2) {
@@ -37,7 +45,6 @@ public class TimeController {
         else {
             return "/attackJoker";
         }
-
     }
 
     @PostMapping("/win")
@@ -47,7 +54,7 @@ public class TimeController {
         model.addAttribute("name", personnage1.getName());
         model.addAttribute("attack", attackChoice[attack]);
         personnage1.setAttack(attack);
-        int[] scenario = {personnage1.getNameIndex(), personnage1.getArme(), personnage1.getAttack()};
+        int[] scenario = {personnage1.getHeroIndexIndex(), personnage1.getArme(), personnage1.getAttack()};
         String ending = "";
         switch (Arrays.toString(scenario)) {
             case "[0, 0, 0]":
@@ -112,19 +119,6 @@ Vous vous approchez du Mask pour le féliciter... Puis vous remarquez le détona
         }
         model.addAttribute("ending", ending);
         return "/win";
-        /*if (name.equals("Joker") && personnage1.getAttack().equals("frontale")
-                && personnage1.getArme().equals("Pierre")) {
-            return "/win";
-        }else if (name.equals("Pika") && personnage1.getAttack().equals("dans l'oeil")
-                && personnage1.getArme().equals("Baguette Magique")){
-            return "/win";
-        }else if (name.equals("MacroJoke") && personnage1.getAttack().equals("insulte")
-                && personnage1.getArme().equals("Epée")){
-            return "/win";
-        }
-        else {
-            return "/lose";
-        }*/
     }
     @PostMapping("/startAgain")
 
@@ -132,7 +126,7 @@ Vous vous approchez du Mask pour le féliciter... Puis vous remarquez le détona
         model.addAttribute("name", personnage1.getName());
 
         if (choice == 0) {
-            return "/index";
+            return "/choiceHero";
         }
         return "/youSuck";
     }

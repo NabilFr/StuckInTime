@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+<header th:replace="header :: top"></header>
 <article th:text="|Votre ${arme} a besoin d''une attaque|">Think you can win ?</article>
 <br>
 <form th:action="@{/win}" method="post">

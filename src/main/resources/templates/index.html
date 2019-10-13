@@ -9,11 +9,17 @@
     <title>Stuck In Time</title>
 </head>
 <body>
-<h1 id='h1' th:text="|Quel est votre nom ?|">Your name</h1>
-<form th:action="@{/choiceHero}" method="post">
-    <input type="text" name="username">
-    <input type="submit" value ="Entrer" name ="username">
-</form>
+
+<header th:replace="header :: top"></header>
+<div class="window">
+    <h1 id='h1' th:text="|Quel est votre nom ?|">Your name</h1>
+    <div class="main">
+        <form th:action="@{/choiceHero}" method="post">
+            <input type="text" name="username">
+            <input type="submit" value="Entrer">
+        </form>
+    </div>
+</div>
 <script type="text/javascript">
     var clignotement = function(){
         if (document.getElementById('h1').style.visibility=='visible'){

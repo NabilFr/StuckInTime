@@ -3,7 +3,7 @@ package fr.wcs.StuckInTime;
 public class Hero {
     private String name;
     private String hero;
-    private int nameIndex;
+    private int heroIndex;
     private int arme;
     private int attack;
     private int score;
@@ -13,28 +13,28 @@ public class Hero {
         this.score = 0;
     }
 
-    public void setName(int name) {
-        this.name = heroes[name];
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public void setHero(String hero) {
-        this.hero = hero;
+    public void setHero(int hero) {
+        this.hero = heroes[hero];
     }
 
     public String getHero() {
         return hero;
     }
 
-    public void setNameIndex(int nameIndex) {
-        this.nameIndex = nameIndex;
+    public void setHeroIndex(int heroIndex) {
+        this.heroIndex = heroIndex;
     }
 
-    public int getNameIndex() {
-        return nameIndex;
+    public int getHeroIndexIndex() {
+        return heroIndex;
     }
 
     public void setArme(int arme) {

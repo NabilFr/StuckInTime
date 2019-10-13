@@ -6,13 +6,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 @Controller
 public class TimeController {
     private Hero personnage1 = new Hero();
 
-    @PostMapping("/")
+    @PostMapping("/choiceHero")
     public String chooseYourName(Model model, @RequestParam(name = "username")String name) {
         personnage1.setName(name);
         model.addAttribute("name", name);
@@ -22,7 +21,7 @@ public class TimeController {
 
     @PostMapping("/weapon")
     public String indexContinue(Model model, @RequestParam(name = "weapon") int choice) {
-        personnage1.setName(choice);
+        personnage1.setHero(choice);
         String name = personnage1.getName();
         model.addAttribute("name", name);
         if (choice >= 0 && choice <= 2) {
@@ -55,7 +54,7 @@ public class TimeController {
         model.addAttribute("name", personnage1.getName());
         model.addAttribute("attack", attackChoice[attack]);
         personnage1.setAttack(attack);
-        int[] scenario = {personnage1.getNameIndex(), personnage1.getArme(), personnage1.getAttack()};
+        int[] scenario = {personnage1.getHeroIndexIndex(), personnage1.getArme(), personnage1.getAttack()};
         String ending = "";
         switch (Arrays.toString(scenario)) {
             case "[0, 0, 0]":

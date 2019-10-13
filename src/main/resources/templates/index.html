@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 id='h1' th:text="|Quel est votre nom ?|">Your name</h1>
-<form th:action="@{/choiceHero}">
+<form th:action="@{/choiceHero}" method="post">
     <input type="text" name="username">
     <input type="submit" value ="Entrer" name ="username">
 </form>

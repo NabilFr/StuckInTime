@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
+    <div class="window">
 <article th:text="|Vous avez choisi le ${arme} pour ${name}. Que doit-il en faire ?|">Think you can win ?</article>
 <br>
 <form th:action="@{/win}" method="post">
@@ -16,5 +17,6 @@
     <input type="hidden" name="attack" value="1"/>
     <input type="submit" value="Réflexion philosophique">
 </form>
+    </div>
 </body>
 </html>

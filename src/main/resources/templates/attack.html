@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
 </head>
 <body>
-<article th:text="|Votre ${arme} a besoin d''une attaque|">Think you can win ?</article>
+    <div class="window">
+<article th:text="|Vous avez choisi le ${arme} pour ${name}. Que doit-il en faire ?|">Think you can win ?</article>
 <br>
 <form th:action="@{/win}" method="post">
-    <input type="hidden" name="attack" placeholder="frontale" value="0"/>
-    <input type="submit" value="Frontale">
+    <input type="hidden" name="attack" value="0"/>
+    <input type="submit" th:value="${attack1}">
 </form>
 <form th:action="@{/win}" method="post">
-    <input type="hidden" name="attack" placeholder="dans l'oeil" value="1"/>
-    <input type="submit" value="Dans l'oeil">
+    <input type="hidden" name="attack" value="1"/>
+    <input type="submit" th:value="${attack2}">
 </form>
+    </div>
 </body>
 </html>

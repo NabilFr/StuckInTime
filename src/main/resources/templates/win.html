@@ -12,12 +12,22 @@
         <label>Voulez-vous continuer à sauver le monde ?</label>
         <input type="hidden" value="0" name="start">
         <input type="submit" value="Je veux continuer !" >
+        <input type="hidden" value="1" name="start">
+        <input type="submit" value="Non merci !" >
     </form>
+    <h1 id="h1">Vous êtes mort !</h1>
+    <p th:text="|Vous gagnez ${points} points d'expérience.|">Vous gagnez que dalle</p>
 </div>
-<form th:action="@{/startAgain}" method="post">
-    <label>Voulez-vous continuer à sauver le monde ?</label>
-    <input type="hidden" value="1" name="start">
-    <input type="submit" value="Non merci !" >
-</form>
+<script type="text/javascript">
+    var clignotement = function(){
+        if (document.getElementById('h1').style.visibility=='visible'){
+            document.getElementById('h1').style.visibility='hidden';
+        }
+        else{
+            document.getElementById('h1').style.visibility='visible';
+        }
+    };
+    const periode = setInterval(clignotement, 500);
+</script>
 </body>
 </html>

@@ -63,8 +63,8 @@ public class Hero {
         this.heroState[this.heroIndex] = heroState;
     }
 
-    public int[] getHeroState() {
-        return this.heroState;
+    public int getHeroState(int index) {
+        return this.heroState[index];
     }
 
     public void setArme(int arme) {

@@ -41,5 +41,5 @@ var youaredead = function () {
 }
 
 if(document.getElementById) {
-    defilement = setInterval(changeMessage,80)
+    defilement = setInterval(changeMessage,55)
 }
